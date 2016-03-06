@@ -1,4 +1,5 @@
 # How to use
+DemoCompose is a small comments app to demonstrate creating multi-container applications with docker compose.
 
 ## To build
 <code>docker-compose build</code>
