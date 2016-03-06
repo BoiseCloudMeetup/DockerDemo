@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link href="/styles/reset.css" rel="stylesheet"/>
+    <link href="/styles/app.css" rel="stylesheet"/>
+    <link href="/styles/layout.css" rel="stylesheet"/>
+    <link href="/styles/chat.css" rel="stylesheet"/>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular/angular-route.min.js"></script>
+  </head>
+
+  <body ng-app="app">
+    <div class="app flex column">
+
+      <div class="header">
+        <h1>Chat Demo</h1>
+      </div>
+
+      <div class="main flex grow" ng-view></div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script src="/services/services.js"></script>
+    <script src="/views/room/room.js"></script>
+    <script src="/views/join/join.js"></script>
+    <script src="/views/login/login.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+version: '2'
+
+services:
+  app:
+    build: ./App/
+    image: jsparrow/chat-app
+    ports:
+      - "80:80"
+    networks:
+      - front
+    depends_on:
+      - messageService
+      - userService
+      - keyService
+      - wsService
+  wsService:
+    build: ./WSService/
+    image: jsparrow/ws-service
+    networks:
+      - front
+    depends_on:
+      - messageService
+      - keyService
+      - userService
+  messageService:
+    build: ./MessageService/
+    image: jsparrow/message-service
+    networks:
+      - front
+      - back
+    depends_on:
+      - mongo
+  userService:
+    build: ./UserService/
+    image: jsparrow/user-service
+    networks:
+      - front
+      - back
+    depends_on:
+      - mongo
+  keyService:
+    build: ./KeyService/
+    image: jsparrow/key-service
+    networks:
+      - front
+  mongo:
+    image: mongo
+    networks:
+      - back
+
+networks:
+  back:
+  front:

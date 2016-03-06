@@ -1,0 +1,58 @@
+.center {
+  flex-grow: 1;
+}
+.chat {
+  color: #DDD;
+  flex-grow: 1;
+  padding: 5px;
+  position: relative;
+}
+.chat p {
+  padding: 5px;
+}
+.scroller {
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.input input[type="text"] {
+  display: block;
+  flex-grow: 1;
+  padding: 10px;
+  outline: none;
+  border: 1px solid #333;
+  border-left: none;
+  border-right: none;
+
+  color: #DDD;
+  background: #222;
+}
+.input button {
+  padding: 10px;
+  background: none;
+  color: #DDD;
+  border: 1px solid #333;
+  border-right: none;
+}
+input button:focus {
+  border: none;
+  outline: none;
+}
+
+.left, .right {;
+  color: #DDD;
+  width: 200px;
+  z-index: 100;
+}
+.right {
+  border-left: 1px solid #333;
+}
+.left {
+  border-right: 1px solid #333;
+}
+.left h2, .right h2 {
+  padding: 5px;
+}

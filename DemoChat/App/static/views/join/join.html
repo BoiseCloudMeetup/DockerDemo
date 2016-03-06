@@ -1,0 +1,28 @@
+<div class="flex grow row">
+  <div class="flex grow"></div>
+  <div class="flex column">
+    <div class="flex grow" style="max-height: 25%;"></div>
+
+    <div class="flex" style="width: 400px;">
+      <form class="form grow flex column" ng-submit="ctl.join(ctl.room)">
+        <h1>Join</h1>
+        <div>
+          <div class="flex column combo">
+            <input class="flex" type="text" placeholder="Room" ng-model="ctl.room" required/>
+            <input type="submit" value="Enter"/>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex" style="width: 400px;">
+      <div class="form grow flex column">
+        <h1>Create Random</h1>
+        <input type="button" value="Go" ng-click="ctl.create()"/>
+      </div>
+    </div>
+
+    <div class="flex grow"></div>
+  </div>
+  <div class="flex grow"></div>
+</div>

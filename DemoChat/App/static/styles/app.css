@@ -1,0 +1,33 @@
+html, body, p, a,
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1 {
+  font-size: 22px;
+  padding: 10px;
+}
+
+small {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  background: #000;
+}
+
+.header {
+  color: rgb(100, 150, 255);
+  background: #222;
+  border-bottom: 1px solid #333;
+}
+.header.flex {
+  flex-grow: 0;
+}
+
+.main {
+  background: #222
+}

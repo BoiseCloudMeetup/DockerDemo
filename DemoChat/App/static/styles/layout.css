@@ -1,0 +1,48 @@
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flex {
+  display: flex;
+}
+.flex.column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex.grow {
+  flex-grow: 1;
+}
+
+.form h1 {
+  color: #DFE;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form input {
+  background: #DDD;
+  color: #222;
+  border: none;
+  font-size: 18px;
+
+
+  padding: 10px;
+  margin: 10px;
+  min-width: 80px;
+}
+.form.row input + input {
+  margin-left: 0;
+}
+.form.column input + input {
+  margin-top: 0;
+}
+
+.form input[type="submit"] {
+  border: none;
+}

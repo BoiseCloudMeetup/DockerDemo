@@ -1,0 +1,27 @@
+<div class="flex grow row">
+
+  <div class="left">
+    <ul style="padding: 5px;">
+      <li ng-repeat="user in ctl.users" style="color: rgba(255,255,255,0.7); font-size: 11px;">
+        {{user.Nickname}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="center flex column">
+    <div class="chat">
+      <div class="scroller" id="scroller">
+        <p ng-repeat="msg in ctl.messages track by $index">
+          {{msg.Nickname}}: {{msg.Text}}
+        </p>
+      </div>
+    </div>
+    <div>
+      <form class="input flex row" ng-submit="ctl.sendMessage(ctl.text)">
+        <input type="text" ng-model="ctl.text" placholder="message goes here..."/>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+</div>
