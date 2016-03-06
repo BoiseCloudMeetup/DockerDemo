@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Docker Compose Demo</title>
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body ng-controller="controller">
+
+    <div>
+      <h1>Comments</h1>
+      <form ng-submit="submit(comment)">
+        <input type="text" ng-model="comment" placeholder="Add a comment"/>
+        <input type="submit"/>
+      </form>
+    </div>
+
+    <div ng-cloak>
+      <ol>
+        <li ng-repeat="comment in comments">{{comment}}</li>
+      </ol>
+    </div>
+
+  </body>
+
+  <script src="/angular.js"></script>
+  <script>
+
+    angular.module('app', [])
+      .controller('controller', controller);
+
+    function controller($scope, $http) {
+      $scope.comments = [];
+
+      $http.get('/api/')
+        .then(function(response) {
+          $scope.comments = response.data;
+        }, function() {
+          alert('error getting comments');
+        });
+
+      $scope.submit = function(comment) {
+          $http.post('/api/', null, {params: {comment: comment}})
+            .then(function() {
+              console.log('sent comment');
+              $scope.comments.push(comment);
+              $scope.comment = '';
+            }, function() {
+              alert('error sending comment');
+            });
+      }
+
+    }
+  </script>
+
+</html>
